@@ -27,11 +27,11 @@ For developing the Real Estate App, below main packages are used:
 
 
 # Demo
-<img height="720px" width="380px" src="https://github.com/TheFlutterCommunity/real_estate/blob/master/demo/gif/RealEstate.gif?raw=true"> 
+<img height="720px" width="320px" src="https://github.com/TheFlutterCommunity/real_estate/blob/master/demo/gif/RealEstate.gif?raw=true"> 
 
 # Android Screen
-<img height="720px" width="380px" src="https://github.com/TheFlutterCommunity/real_estate/blob/master/demo/android/Screenshot-1.jpg?raw=true"> 
-<img height="720px" width="380px" src="https://github.com/TheFlutterCommunity/real_estate/blob/master/demo/android/Screenshot-2.jpg?raw=true"> 
+<img height="480px" src="https://github.com/TheFlutterCommunity/real_estate/blob/master/demo/android/Screenshot-1.jpg?raw=true"> 
+<img height="480px" src="https://github.com/TheFlutterCommunity/real_estate/blob/master/demo/android/Screenshot-2.jpg?raw=true"> 
 
 ## Note
 
