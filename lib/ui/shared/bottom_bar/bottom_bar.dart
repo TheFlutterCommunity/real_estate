@@ -31,14 +31,14 @@ class _BottomBarState extends State<BottomBar> with TickerProviderStateMixin {
 
     _bottomBarAnimationController = AnimationController(
         vsync: this,
-        duration: const Duration(milliseconds: kAnimationDuration1800));
+        duration: const Duration(milliseconds: kAnimationDuration2000));
 
     /// Init Animations
     _startAnimations();
   }
 
   void _startAnimations() {
-    Future.delayed(const Duration(milliseconds: kAnimationDuration1500), () {
+    Future.delayed(const Duration(milliseconds: kAnimationDuration1800), () {
       if (mounted) {
         _bottomBarAnimationController.forward();
       }
