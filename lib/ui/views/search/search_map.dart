@@ -21,8 +21,17 @@ class _SearchMapState extends State<SearchMap> {
   /// Markers
   Set<Marker>? markers;
 
+  /// Current Location
+  static const currentLatLng = LatLng(28.6139, 77.2088);
+
   /// GoogleMap Dark Mode Style
   String? _darkMapStyle;
+
+  /// List of Lat Lng
+  List<LatLng> latLngList = <LatLng>[];
+
+  /// List of Marker Item
+  List<MarkerItem> markerItems = <MarkerItem>[];
 
   @override
   void initState() {
@@ -33,6 +42,24 @@ class _SearchMapState extends State<SearchMap> {
     markers = <Marker>{};
 
     _loadMapStyles();
+
+    latLngList = const [
+      LatLng(28.610622053913218, 77.2058529406786),
+      LatLng(28.607457295113054, 77.21310563385487),
+      LatLng(28.611488578385913, 77.21241898834705),
+      LatLng(28.617265323620472, 77.21198983490467),
+      LatLng(28.619676351908574, 77.20696873962879),
+      LatLng(28.621070202383816, 77.20593877136707),
+    ];
+
+    markerItems = [
+      MarkerItem(title: kMarkerTitle1, iconPath: building),
+      MarkerItem(title: kMarkerTitle2, iconPath: building),
+      MarkerItem(title: kMarkerTitle3, iconPath: building),
+      MarkerItem(title: kMarkerTitle4, iconPath: building),
+      MarkerItem(title: kMarkerTitle5, iconPath: building),
+      MarkerItem(title: kMarkerTitle6, iconPath: building),
+    ];
 
     _getMarkers();
   }
@@ -48,13 +75,20 @@ class _SearchMapState extends State<SearchMap> {
   );
 
   Future<void> _getMarkers() async {
-    final markerWidget = await _getCustomMarker(iconPath: building);
+    final markerWidgets = <BitmapDescriptor>[];
+    for (final item in markerItems) {
+      final widget = await _getCustomMarker(
+        title: item.title,
+        iconPath: item.iconPath,
+      );
+      markerWidgets.add(widget);
+    }
 
     markers!.addAll(latLngList
         .map((latLng) => Marker(
               markerId: MarkerId(latLngList.indexOf(latLng).toString()),
               position: latLng,
-              icon: markerWidget,
+              icon: markerWidgets[0],
               infoWindow: InfoWindow(
                 title: latLngList.indexOf(latLng).toString(),
               ),
@@ -68,13 +102,21 @@ class _SearchMapState extends State<SearchMap> {
   }
 
   Future<BitmapDescriptor> _getCustomMarker({
+    required String title,
     required String iconPath,
   }) async =>
       await SvgOnImage(
+        title: title,
         iconPath: iconPath,
       ).toBitmapDescriptor(
-        logicalSize: const Size(kMapMarkerSize, kMapMarkerSize),
-        imageSize: const Size(kMapMarkerSize, kMapMarkerSize),
+        logicalSize: const Size(
+          kMapMarkerSize,
+          kMapMarkerSize,
+        ),
+        imageSize: const Size(
+          kMapMarkerSize,
+          kMapMarkerSize,
+        ),
       );
 
   @override

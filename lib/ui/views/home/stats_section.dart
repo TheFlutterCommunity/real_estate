@@ -23,14 +23,23 @@ class _StatsSectionState extends State<StatsSection>
     super.initState();
 
     _scaleTransitionAnimationController = AnimationController(
-        vsync: this,
-        duration: const Duration(milliseconds: kAnimationDuration1500))
-      ..forward();
+      vsync: this,
+      duration: const Duration(milliseconds: kAnimationDuration1500),
+    );
 
     _scaleTransitionAnimation = CurvedAnimation(
       parent: _scaleTransitionAnimationController,
       curve: Curves.fastOutSlowIn,
     );
+    _startAnimation();
+  }
+
+  void _startAnimation() {
+    Future.delayed(const Duration(milliseconds: kAnimationDuration1200), () {
+      if (mounted) {
+        _scaleTransitionAnimationController.forward();
+      }
+    });
   }
 
   @override
@@ -76,13 +85,15 @@ class _StatsSectionState extends State<StatsSection>
                         children: [
                           AnimatedDigit(
                             key: UniqueKey(),
+                            delayDuration: const Duration(
+                                milliseconds: kAnimationDuration1200),
                             duration: const Duration(
                                 milliseconds: kAnimationDuration1500),
                             digit: kBuyCountNo,
                             style: TextStyle(
                               color: stats1LabelTextColor,
                               fontWeight: FontWeight.bold,
-                              fontSize: s11,
+                              fontSize: s10,
                             ),
                           ),
                           Text(
@@ -130,6 +141,8 @@ class _StatsSectionState extends State<StatsSection>
                         children: [
                           AnimatedDigit(
                             key: UniqueKey(),
+                            delayDuration: const Duration(
+                                milliseconds: kAnimationDuration1200),
                             duration: const Duration(
                               milliseconds: kAnimationDuration1500,
                             ),
@@ -137,7 +150,7 @@ class _StatsSectionState extends State<StatsSection>
                             style: TextStyle(
                               color: stats2LabelTextColor,
                               fontWeight: FontWeight.bold,
-                              fontSize: s11,
+                              fontSize: s10,
                             ),
                           ),
                           Text(

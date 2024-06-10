@@ -28,13 +28,14 @@ class _TitleSectionState extends State<TitleSection>
     super.initState();
 
     _fadeTransitionAnimationController = AnimationController(
-        vsync: this,
-        duration: const Duration(milliseconds: kAnimationDuration800))
-      ..forward();
-    _sizeTransitionController = AnimationController(
-      duration: const Duration(milliseconds: kAnimationDuration1500),
       vsync: this,
-    )..forward();
+      duration: const Duration(milliseconds: kAnimationDuration800),
+    );
+
+    _sizeTransitionController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: kAnimationDuration1500),
+    );
 
     _fadeTransitionAnimation = CurvedAnimation(
       parent: _fadeTransitionAnimationController,
@@ -45,6 +46,17 @@ class _TitleSectionState extends State<TitleSection>
       parent: _sizeTransitionController,
       curve: Curves.decelerate,
     );
+
+    _startAnimation();
+  }
+
+  void _startAnimation() {
+    Future.delayed(const Duration(milliseconds: kAnimationDuration1000), () {
+      if (mounted) {
+        _fadeTransitionAnimationController.forward();
+        _sizeTransitionController.forward();
+      }
+    });
   }
 
   @override

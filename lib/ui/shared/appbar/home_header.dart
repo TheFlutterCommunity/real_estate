@@ -30,13 +30,13 @@ class _HomeHeaderState extends State<HomeHeader> with TickerProviderStateMixin {
     super.initState();
 
     _scaleTransitionAnimationController = AnimationController(
-        vsync: this,
-        duration: const Duration(milliseconds: kAnimationDuration1500))
-      ..forward();
-    _sizeTransitionController = AnimationController(
-      duration: const Duration(milliseconds: kAnimationDuration1500),
       vsync: this,
-    )..forward();
+      duration: const Duration(milliseconds: kAnimationDuration800),
+    );
+    _sizeTransitionController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: kAnimationDuration1200),
+    );
 
     _scaleTransitionAnimation = CurvedAnimation(
       parent: _scaleTransitionAnimationController,
@@ -46,6 +46,13 @@ class _HomeHeaderState extends State<HomeHeader> with TickerProviderStateMixin {
       parent: _sizeTransitionController,
       curve: Curves.fastOutSlowIn,
     );
+
+    _startAnimation();
+  }
+
+  _startAnimation() {
+    _scaleTransitionAnimationController.forward();
+    _sizeTransitionController.forward();
   }
 
   @override

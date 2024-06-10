@@ -3,13 +3,15 @@ import 'package:real_estate/core/index.dart';
 
 class AnimatedDigit extends StatefulWidget {
   final num digit;
+  final Duration delayDuration;
   final Duration duration;
   final TextStyle style;
 
   const AnimatedDigit({
     required Key key,
     required this.digit,
-    this.duration = const Duration(milliseconds: kAnimationDuration1200),
+    this.delayDuration = const Duration(milliseconds: kAnimationDuration1200),
+    this.duration = const Duration(milliseconds: kAnimationDuration1000),
     required this.style,
   }) : super(key: key);
 
@@ -41,7 +43,15 @@ class _AnimatedDigitState extends State<AnimatedDigit>
       ),
     );
 
-    _animationController.forward();
+    _startAnimation();
+  }
+
+  void _startAnimation() {
+    Future.delayed(widget.delayDuration, () {
+      if (mounted) {
+        _animationController.forward();
+      }
+    });
   }
 
   @override

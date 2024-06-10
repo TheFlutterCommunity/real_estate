@@ -51,16 +51,26 @@ class _FlatButtonState extends State<FlatButton> with TickerProviderStateMixin {
     super.initState();
 
     _sizeTransitionController = AnimationController(
-      duration: const Duration(milliseconds: kAnimationDuration3000),
       vsync: this,
-    )..forward();
+      duration: const Duration(milliseconds: kAnimationDuration3000),
+    );
 
     _sizeTransitionAnimation = CurvedAnimation(
       parent: _sizeTransitionController,
       curve: Curves.fastOutSlowIn,
     );
 
-    Future.delayed(const Duration(milliseconds: kAnimationDuration300), () {
+    _startAnimations();
+  }
+
+  void _startAnimations() {
+    Future.delayed(const Duration(milliseconds: kAnimationDuration1800), () {
+      if (mounted) {
+        _sizeTransitionController.forward();
+      }
+    });
+
+    Future.delayed(const Duration(milliseconds: kAnimationDuration2050), () {
       if (mounted) {
         setState(() {
           hasStartAlign = true;

@@ -29,13 +29,13 @@ class _SearchHeaderSectionState extends State<SearchHeaderSection>
     super.initState();
 
     _scaleTransitionAnimationController = AnimationController(
-        vsync: this,
-        duration: const Duration(milliseconds: kAnimationDuration1500))
-      ..forward();
-    _sizeTransitionController = AnimationController(
-      duration: const Duration(milliseconds: kAnimationDuration1500),
       vsync: this,
-    )..forward();
+      duration: const Duration(milliseconds: kAnimationDuration1500),
+    );
+    _sizeTransitionController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: kAnimationDuration1500),
+    );
 
     _scaleTransitionAnimation = CurvedAnimation(
       parent: _scaleTransitionAnimationController,
@@ -45,6 +45,13 @@ class _SearchHeaderSectionState extends State<SearchHeaderSection>
       parent: _sizeTransitionController,
       curve: Curves.easeOutQuint,
     );
+
+    _startAnimation();
+  }
+
+  _startAnimation() {
+    _scaleTransitionAnimationController.forward();
+    _sizeTransitionController.forward();
   }
 
   @override

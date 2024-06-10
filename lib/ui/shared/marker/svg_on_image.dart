@@ -4,17 +4,24 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/index.dart';
 
 class SvgOnImage extends StatelessWidget {
+  final String title;
   final String iconPath;
 
   const SvgOnImage({
     super.key,
+    required this.title,
     required this.iconPath,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(s6),
+      padding: EdgeInsets.only(
+        left: s8,
+        top: s6,
+        right: s8,
+        bottom: s6,
+      ),
       decoration: BoxDecoration(
         color: yellowColor,
         borderRadius: BorderRadius.only(

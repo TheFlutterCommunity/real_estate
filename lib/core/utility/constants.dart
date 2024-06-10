@@ -1,5 +1,3 @@
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 /// Font
 const String appName = 'Real Estate';
 
@@ -17,24 +15,19 @@ const String nightModeStyleJSONPath = 'assets/json/night_mode_style.json';
 /// Google Map Zoom
 const double kZoomValue = 15;
 
-/// Current Location
-const currentLatLng = LatLng(28.6139, 77.2088);
-
-/// List of Lat Lng
-const latLngList = <LatLng>[
-  LatLng(28.610622053913218, 77.2058529406786),
-  LatLng(28.607457295113054, 77.21310563385487),
-  LatLng(28.611488578385913, 77.21241898834705),
-  LatLng(28.617265323620472, 77.21198983490467),
-  LatLng(28.619676351908574, 77.20696873962879),
-  LatLng(28.621070202383816, 77.20593877136707),
-];
+/// Marker Items
+const String kMarkerTitle1 = '10,3 mn P';
+const String kMarkerTitle2 = '11 mn P';
+const String kMarkerTitle3 = '7,8 mn P';
+const String kMarkerTitle4 = '8,5 mn P';
+const String kMarkerTitle5 = '13,3 mn P';
+const String kMarkerTitle6 = '6,95 mn P';
 
 /// Heights
 const double kAppBarHeight = 90;
 const double kStatsHeight = 190;
 const double kPopupHeight = 210;
-const double kPopupWidth = 200;
+const double kPopupWidth = 210;
 
 const double kMapMarkerSize = 150;
 
@@ -45,9 +38,13 @@ const int kAnimationDuration200 = 200;
 const int kAnimationDuration300 = 300;
 const int kAnimationDuration500 = 500;
 const int kAnimationDuration800 = 800;
+const int kAnimationDuration1000 = 1000;
 const int kAnimationDuration1200 = 1200;
 const int kAnimationDuration1500 = 1500;
+const int kAnimationDuration1800 = 1800;
 const int kAnimationDuration2000 = 2000;
+const int kAnimationDuration2050 = 2050;
+const int kAnimationDuration2200 = 2200;
 const int kAnimationDuration2500 = 2500;
 const int kAnimationDuration2800 = 2800;
 const int kAnimationDuration3000 = 3000;

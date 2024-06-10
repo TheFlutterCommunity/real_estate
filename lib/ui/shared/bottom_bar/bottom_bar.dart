@@ -23,27 +23,31 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> with TickerProviderStateMixin {
   /// BottomBar Animation Controller
-  late final AnimationController bottomBarAnimationController;
+  late final AnimationController _bottomBarAnimationController;
 
   @override
   void initState() {
     super.initState();
 
-    bottomBarAnimationController = AnimationController(
+    _bottomBarAnimationController = AnimationController(
         vsync: this,
-        duration: const Duration(milliseconds: kAnimationDuration2500));
+        duration: const Duration(milliseconds: kAnimationDuration1800));
 
     /// Init Animations
-    _initAnimations();
+    _startAnimations();
   }
 
-  void _initAnimations() {
-    bottomBarAnimationController.forward();
+  void _startAnimations() {
+    Future.delayed(const Duration(milliseconds: kAnimationDuration1500), () {
+      if (mounted) {
+        _bottomBarAnimationController.forward();
+      }
+    });
   }
 
   @override
   void dispose() {
-    bottomBarAnimationController.dispose();
+    _bottomBarAnimationController.dispose();
     super.dispose();
   }
 
@@ -51,7 +55,7 @@ class _BottomBarState extends State<BottomBar> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return SlideTransition(
       position: Tween<Offset>(begin: Offset(s0, base), end: Offset.zero)
-          .animate(bottomBarAnimationController),
+          .animate(_bottomBarAnimationController),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Container(

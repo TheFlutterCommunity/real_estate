@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:real_estate/core/model/grid_item.dart';
 
 import '../../../core/index.dart';
 import '../../index.dart';
@@ -47,15 +46,20 @@ class _FlatSectionState extends State<FlatSection>
     ]);
 
     _flatSectionAnimationController = AnimationController(
-        vsync: this,
-        duration: const Duration(milliseconds: kAnimationDuration2000));
+      vsync: this,
+      duration: const Duration(milliseconds: kAnimationDuration1000),
+    );
 
     /// Init Animations
-    _initAnimations();
+    _startAnimations();
   }
 
-  void _initAnimations() {
-    _flatSectionAnimationController.forward();
+  void _startAnimations() {
+    Future.delayed(const Duration(milliseconds: kAnimationDuration1800), () {
+      if (mounted) {
+        _flatSectionAnimationController.forward();
+      }
+    });
   }
 
   @override

@@ -45,8 +45,8 @@ class _PopUpMenuState extends State<PopUpMenu> {
             Center(
               child: SvgPicture.asset(
                 item.iconPath,
-                height: addSizing(s4, s1),
-                width: addSizing(s4, s1),
+                height: s5,
+                width: s5,
                 colorFilter: ColorFilter.mode(
                   isSelected ? yellowDarkColor : popUpItemTextColor,
                   BlendMode.srcIn,
