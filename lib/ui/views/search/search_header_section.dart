@@ -67,14 +67,13 @@ class _SearchHeaderSectionState extends State<SearchHeaderSection>
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizeTransition(
             sizeFactor: _sizeTransitionAnimation,
             axis: Axis.horizontal,
-            axisAlignment: -2,
+            axisAlignment: floatSizeMinusTwo,
             child: SizedBox(
-              width: width * 0.75,
+              width: width * floatSize72,
               child: TextField(
                 showCursor: false,
                 decoration: InputDecoration(
@@ -101,6 +100,7 @@ class _SearchHeaderSectionState extends State<SearchHeaderSection>
               ),
             ),
           ),
+          const Spacer(),
           ScaleTransition(
             scale: _scaleTransitionAnimation,
             child: SizedBox(

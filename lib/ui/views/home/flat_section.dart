@@ -67,7 +67,7 @@ class _FlatSectionState extends State<FlatSection>
   @override
   Widget build(BuildContext context) {
     return SlideTransition(
-      position: Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+      position: Tween<Offset>(begin: Offset(s0, base), end: Offset.zero)
           .animate(_flatSectionAnimationController),
       child: Card(
         color: whiteColor,

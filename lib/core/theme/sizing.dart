@@ -113,8 +113,22 @@ double get floatSize58 => 0.58;
 
 double get floatSize60 => 0.60;
 
+double get floatSize62 => 0.62;
+
+double get floatSize65 => 0.65;
+
+double get floatSize68 => 0.68;
+
+double get floatSize72 => 0.72;
+
+double get floatSize75 => 0.75;
+
 double get floatSize90 => 0.90;
 
 double get floatSizeMinus90 => -0.90;
 
 double get floatSize100 => 1.0;
+
+double get floatSizeMinusOne => -1;
+
+double get floatSizeMinusTwo => -2;

@@ -50,7 +50,7 @@ class _DashboardViewState extends State<DashboardView> {
       builder: (BuildContext context) => Scaffold(
         body: _pages.elementAt(dashboardStore.tabIndex.value),
         floatingActionButton: BottomBar(
-          width: MediaQuery.of(context).size.width * floatSize58,
+          width: MediaQuery.of(context).size.width * floatSize68,
           onTap: (index) => dashboardStore.selectTab(index),
           tabIndex: dashboardStore.tabIndex.value,
           tabItems: tabItems,

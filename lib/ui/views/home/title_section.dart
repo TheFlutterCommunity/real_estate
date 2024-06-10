@@ -75,7 +75,7 @@ class _TitleSectionState extends State<TitleSection>
           SizeTransition(
             sizeFactor: _sizeTransitionAnimation,
             axis: Axis.vertical,
-            axisAlignment: -1,
+            axisAlignment: floatSizeMinusOne,
             child: Text(
               kDescription,
               style: TextStyle(

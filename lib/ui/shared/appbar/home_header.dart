@@ -66,7 +66,7 @@ class _HomeHeaderState extends State<HomeHeader> with TickerProviderStateMixin {
           SizeTransition(
             sizeFactor: _sizeTransitionAnimation,
             axis: Axis.horizontal,
-            axisAlignment: -1,
+            axisAlignment: floatSizeMinusOne,
             child: Center(
               child: Container(
                 padding: EdgeInsets.only(left: s4, right: s4),

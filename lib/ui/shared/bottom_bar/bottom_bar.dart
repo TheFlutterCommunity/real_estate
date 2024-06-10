@@ -50,7 +50,7 @@ class _BottomBarState extends State<BottomBar> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return SlideTransition(
-      position: Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+      position: Tween<Offset>(begin: Offset(s0, base), end: Offset.zero)
           .animate(bottomBarAnimationController),
       child: Align(
         alignment: Alignment.bottomCenter,
