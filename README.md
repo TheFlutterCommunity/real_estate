@@ -2,7 +2,7 @@
 A Flutter application to showcase Real Estate.
 
 ## **Assignment Overview**
-In this assignment, I mainly focused on good Project architecture (that helps with project scalability and easy maintenance), state management, modularity, naming convention and optimizations etc.
+In this assignment, I mainly focused on good Project architecture (that helps in project scalability and easy maintenance), state management, modularity, naming convention and optimizations etc.
 
 For developing the Real Estate App, below main packages are used:
 #### **Architecture**:
@@ -27,7 +27,7 @@ For developing the Real Estate App, below main packages are used:
 
 
 # Demo
-<img height="480px" src="https://github.com/TheFlutterCommunity/real_estate/blob/master/demo/gif/RealEstate.gif?raw=true"> 
+<img height="720px" width="280px" src="https://github.com/TheFlutterCommunity/real_estate/blob/master/demo/gif/RealEstate.gif?raw=true"> 
 
 # Android Screen
 <img height="480px" src="https://github.com/TheFlutterCommunity/real_estate/blob/master/demo/android/Screenshot-1.jpg?raw=true"> 
